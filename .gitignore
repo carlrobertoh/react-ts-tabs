@@ -1,0 +1,5 @@
+.DS_Store
+.idea/
+_bundles/
+lib**
+node_modules
