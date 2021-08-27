@@ -9,10 +9,11 @@ npm install react-ts-tabs
 ```
 
 ## Usage
-
-```javascript
+```typescript
 import { Tab, TabPanel, Tabs } from "react-ts-tabs";
+```
 
+```
 <Tabs>
     <Tab>Fruits</Tab>
     <Tab>Vegetables</Tab>
