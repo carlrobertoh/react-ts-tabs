@@ -7,3 +7,16 @@
 ```bash
 npm install react-ts-tabs
 ```
+
+## Usage
+
+```javascript
+import { Tab, TabPanel, Tabs } from "react-ts-tabs";
+
+<Tabs>
+    <Tab>Fruits</Tab>
+    <Tab>Vegetables</Tab>
+</Tabs>
+<TabPanel index={0}>Fruits content</TabPanel>
+<TabPanel index={1}>Vegetables</TabPanel>
+```
