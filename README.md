@@ -19,5 +19,5 @@ import { Tab, TabPanel, Tabs } from "react-ts-tabs";
     <Tab>Vegetables</Tab>
 </Tabs>
 <TabPanel index={0}>Fruits content</TabPanel>
-<TabPanel index={1}>Vegetables</TabPanel>
+<TabPanel index={1}>Vegetables content</TabPanel>
 ```
