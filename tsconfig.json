@@ -2,6 +2,7 @@
   "compilerOptions": {
     "outDir": "lib",
     "target": "es5",
+    "types": ["react/next", "react-dom/next"],
     "module": "commonjs",
     "lib": ["es2015", "dom"],
     "moduleResolution": "node",
