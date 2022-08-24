@@ -5,13 +5,6 @@ module.exports = {
     "my-lib": "./src/index.ts",
     "my-lib.min": "./src/index.ts",
   },
-  output: {
-    path: path.resolve(__dirname, "_bundles"),
-    filename: "[name].js",
-    libraryTarget: "umd",
-    library: "MyLib",
-    umdNamedDefine: true,
-  },
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
   },
