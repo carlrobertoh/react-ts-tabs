@@ -1,12 +1,11 @@
 {
   "compilerOptions": {
     "outDir": "lib",
-    "target": "es5",
-    "types": ["react/next", "react-dom/next"],
-    "module": "commonjs",
+    "target": "esnext",
+    "module": "esnext",
     "lib": ["es2015", "dom"],
     "moduleResolution": "node",
-    "jsx": "react",
+    "jsx": "preserve",
     "sourceMap": true,
     "declaration": true,
     "esModuleInterop": true,
@@ -17,8 +16,8 @@
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
   },
-  "include": ["src"],
-  "exclude": ["src/**.test.ts"]
+  "typings": "src/index.d.ts",
+  "exclude": ["demo", "node_modules"]
 }

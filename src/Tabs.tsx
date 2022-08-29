@@ -1,9 +1,12 @@
 import React from "react";
-import "./styles.css";
 
 const cloneChildren = (
   children: React.ReactNode,
-  newPropsCallback: (index: number) => any
+  newPropsCallback: (index: number) => {
+    id: number;
+    selected: boolean;
+    onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  }
 ) =>
   React.Children.map(children, (child, i) =>
     React.isValidElement(child)
@@ -14,7 +17,7 @@ const cloneChildren = (
       : child
   );
 
-interface TabsProps {
+interface TabsProps extends React.HTMLAttributes<HTMLDivElement>{
   defaultIndex?: number;
 }
 
@@ -30,7 +33,7 @@ export const Tabs = ({
     document.querySelector(selector)?.removeAttribute("hidden");
 
   return (
-    <div role="tabs" className="react-js-tabs" {...props}>
+    <div role="tabs" {...props}>
       {cloneChildren(props.children, (index) => ({
         id: index,
         selected: index === defaultIndex,
@@ -64,7 +67,6 @@ export const Tab = React.forwardRef<HTMLButtonElement, TabProps>(
       role="tab"
       aria-selected={props.selected}
       aria-controls={`tabpanel-${props.id}`}
-      className="react-js-tab"
     >
       {props.children}
     </button>
@@ -76,13 +78,7 @@ interface TabPanelProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export const TabPanel = ({ index, ...props }: TabPanelProps) => (
-  <div
-    hidden
-    id={`tabpanel-${index}`}
-    role="tabpanel"
-    className="react-js-tab-panel"
-    {...props}
-  >
+  <div hidden id={`tabpanel-${index}`} role="tabpanel" {...props}>
     {props.children}
   </div>
 );
